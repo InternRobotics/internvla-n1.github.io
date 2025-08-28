@@ -285,17 +285,17 @@ All code, models, and datasets are publicly available.
         <div class="column">
           <div class="video-container">
             <video poster="" id="video1" autoplay controls muted loop>
-              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+              <source src="static/videos/demo_clutter1.mp4" type="video/mp4">
             </video>
-            <p class="has-text-centered instruction-text">Instruction: Enter the office area. Immediately turn left and continue straight. Then make a right turn. Stop at the workstation near the whiteboard.</p>
+            <p class="has-text-centered instruction-text">Instruction: Walk through the tables and chairs, turn left into the café, and stop at the coffee counter.</p>
           </div>
         </div>
         <div class="column">
           <div class="video-container">
             <video poster="" id="video2" autoplay controls muted loop>
-              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+              <source src="static/videos/demo_clutter2.mp4" type="video/mp4">
             </video>
-            <p class="has-text-centered instruction-text">Instruction: Navigate through the lounge, turn right at the corner, and proceed down the hallway. Stop in front of the blue cabinet.</p>
+            <p class="has-text-centered instruction-text">Instruction: Walk through the bamboo forest and turn left. Reach a man sitting on the sofa.</p>
           </div>
         </div>
       </div>
@@ -309,17 +309,17 @@ All code, models, and datasets are publicly available.
         <div class="column">
           <div class="video-container">
             <video poster="" id="video1" autoplay controls muted loop>
-              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+              <source src="static/videos/demo_semantic1.mp4" type="video/mp4">
             </video>
-            <p class="has-text-centered instruction-text">Instruction: Enter the office area. Immediately turn left and continue straight. Then make a right turn. Stop at the workstation near the whiteboard.</p>
+            <p class="has-text-centered instruction-text">Instruction: Walk straight ahead, turn right after seeing the billiard table, and enter the room with shelves.</p>
           </div>
         </div>
         <div class="column">
           <div class="video-container">
             <video poster="" id="video2" autoplay controls muted loop>
-              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+              <source src="static/videos/demo_semantic2.mp4" type="video/mp4">
             </video>
-            <p class="has-text-centered instruction-text">Instruction: Navigate through the lounge, turn right at the corner, and proceed down the hallway. Stop in front of the blue cabinet.</p>
+            <p class="has-text-centered instruction-text">Instruction: Enter the office area. Immediately turn left and continue straight. Then make a right turn. Stop at the workstation near the whiteboard.</p>
           </div>
         </div>
       </div>
@@ -330,17 +330,17 @@ All code, models, and datasets are publicly available.
         <div class="column">
           <div class="video-container">
             <video poster="" id="video1" autoplay controls muted loop>
-              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+              <source src="static/videos/demo_semantic3.mp4" type="video/mp4">
             </video>
-            <p class="has-text-centered instruction-text">Instruction: Enter the office area. Immediately turn left and continue straight. Then make a right turn. Stop at the workstation near the whiteboard.</p>
+            <p class="has-text-centered instruction-text">Instruction: Walk out of this house and find a trash bin.</p>
           </div>
         </div>
         <div class="column">
           <div class="video-container">
             <video poster="" id="video2" autoplay controls muted loop>
-              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+              <source src="static/videos/demo_semantic4.mp4" type="video/mp4">
             </video>
-            <p class="has-text-centered instruction-text">Instruction: Navigate through the lounge, turn right at the corner, and proceed down the hallway. Stop in front of the blue cabinet.</p>
+            <p class="has-text-centered instruction-text">Instruction: Walk towards the orange coffee sculpture and go upstairs. Then keep walking straight and turn right at the end.  After that turn left and walking to the man with a black umbrella. Stop in front of the doors with red handles.</p>
           </div>
         </div>
       </div>
@@ -383,12 +383,14 @@ All code, models, and datasets are publicly available.
   </div>
 </section>
 <!-- End video carousel -->
-
 <section class="hero is-small">
   <div class="hero-body">
+
     <div class="container is-centered has-text-centered">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
+              <hr>
+
           <h1 class="title is-3">Evaluation in Simulation</h1>
           <h2 class="title is-3">Quantitative results</h2>
       <div class="content has-text-justified">
@@ -420,8 +422,9 @@ All code, models, and datasets are publicly available.
       alt="Interpolate start reference image."/>
     </div>
   </div>
-
+<hr>
     <h2 class="title is-3">Dual-System VLN-CE evaluation</h2>
+      <p>Some visualization results of our dual-system model on VLN-CE benchmark (habitat simulator) are as follows. Green curves are GT.</p> 
       <div id="results-carousel" class="carousel results-carousel is-centered has-text-centered is-max-desktop content">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop width="75%">
@@ -452,8 +455,9 @@ All code, models, and datasets are publicly available.
           </video>
         </div>
       </div>
-
+<hr>
       <h2 class="title is-3">Dual-System VLN-PE evaluation</h2>
+      <p>To narrow the sim2real gap, we further evaluate our dual-system on VLN-PE with physics simulation of InternUTopia on a Unitree H1 robot. </p> 
       <div id="results-carousel" class="carousel results-carousel is-centered has-text-centered is-max-desktop content">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop width="75%">
@@ -498,66 +502,64 @@ All code, models, and datasets are publicly available.
           </video>
         </div>
       </div>
+      <hr>
+      <h2 class="title is-3">System 1 evaluation </h2>
+      <p>Evaluation of our System 1 model in more diverse and clutter environments are shown as follows. Our System 1 supports different input patterns.</p> 
       
       <div id="results-carousel" class="carousel results-carousel is-centered has-text-centered is-max-desktop content">
+
         <div class="item item-video5">
-          <h2 class="title is-3">System 1 evaluation (PointGoal) </h2>
-          <video poster="" id="s1_video1" autoplay controls muted loop width="75%">
-            <!-- Your video file here -->
-            <source src="static/videos/system1_pointgoal1.mp4"
-            type="video/mp4">
-          </video>
+          <div class="box has-background-white" style="padding: 1.5rem;">
+            <video poster="" id="s1_video1" autoplay controls muted loop width="75%">
+              <source src="static/videos/system1_pointgoal1.mp4" type="video/mp4">
+            </video>
+            <h2 class="title is-4" style="margin-top: 1rem;">PointGoal</h2>
+          </div>
         </div>
 
-        
         <div class="item item-video6">
-          <h2 class="title is-3">System 1 evaluation (PointGoal) </h2>
-          <video poster="" id="s1_video2" autoplay controls muted loop width="75%">
-            
-            <!-- Your video file here -->
-            <source src="static/videos/system1_pointgoal2.mp4"
-            type="video/mp4">
-          </video>
+          <div class="box has-background-white" style="padding: 1.5rem;">
+            <video poster="" id="s1_video2" autoplay controls muted loop width="75%">
+              <source src="static/videos/system1_pointgoal2.mp4" type="video/mp4">
+            </video>
+            <h2 class="title is-4" style="margin-top: 1rem;">PointGoal</h2>
+          </div>
         </div>
 
-        
         <div class="item item-video7">
-          <h2 class="title is-3">System 1 evaluation (NoGoal) </h2>
-          <video poster="" id="s1_video3" autoplay controls muted loop width="75%">
-            <!-- Your video file here -->
-            <source src="static/videos/system1_nogoal_1.mp4"
-            type="video/mp4">
-          </video>
+          <div class="box has-background-white" style="padding: 1.5rem;">
+            <video poster="" id="s1_video3" autoplay controls muted loop width="75%">
+              <source src="static/videos/system1_nogoal_1.mp4" type="video/mp4">
+            </video>
+            <h2 class="title is-4" style="margin-top: 1rem;">NoGoal</h2>
+          </div>
         </div>
 
-        
         <div class="item item-video8">
-          <h2 class="title is-3">System 1 evaluation (NoGoal) </h2>
-          <video poster="" id="s1_video4" autoplay controls muted loop width="75%">
-            <!-- Your video file here -->
-            <source src="static/videos/system1_nogoal_2.mp4"
-            type="video/mp4">
-          </video>
+          <div class="box has-background-white" style="padding: 1.5rem;">
+            <video poster="" id="s1_video4" autoplay controls muted loop width="75%">
+              <source src="static/videos/system1_nogoal_2.mp4" type="video/mp4">
+            </video>
+            <h2 class="title is-4" style="margin-top: 1rem;">NoGoal</h2>
+          </div>
         </div>
 
-        
         <div class="item item-video1">
-          <h2 class="title is-3">System 1 evaluation (ImageGoal) </h2>
-          <video poster="" id="video1" autoplay controls muted loop width="75%">
-            <!-- Your video file here -->
-            <source src="static/videos/system1_imagegoal1.mp4"
-            type="video/mp4">
-          </video>
+          <div class="box has-background-white" style="padding: 1.5rem;">
+            <video poster="" id="video1" autoplay controls muted loop width="75%">
+              <source src="static/videos/system1_imagegoal1.mp4" type="video/mp4">
+            </video>
+            <h2 class="title is-4" style="margin-top: 1rem;">ImageGoal</h2>
+          </div>
         </div>
 
-        
         <div class="item item-video1">
-          <h2 class="title is-3">System 1 evaluation (ImageGoal) </h2>
-          <video poster="" id="video1" autoplay controls muted loop width="75%">
-            <!-- Your video file here -->
-            <source src="static/videos/system1_imagegoal2.mp4"
-            type="video/mp4">
-          </video>
+          <div class="box has-background-white" style="padding: 1.5rem;">
+            <video poster="" id="video1" autoplay controls muted loop width="75%">
+              <source src="static/videos/system1_imagegoal2.mp4" type="video/mp4">
+            </video>
+            <h2 class="title is-4" style="margin-top: 1rem;">ImageGoal</h2>
+          </div>
         </div>
 
       </div>

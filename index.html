@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"> InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block"><a href="https://github.com/InternRobotics">InternRobotics Team</a><sup>1</sup>,</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Shanghai AI Laboratory</span>
+            </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      
+                      <!-- ArXiv abstract Link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2505.08712" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                        </a>
+                      </span>
+                  
+                  <!-- Video Link. -->
+                  <span class="link-block">
+                    <a href="https://youtu.be/vfUnxD9WfoA"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                          <i class="fab fa-youtube"></i>
+                      </span>
+                      <span>Video</span>
+                    </a>
+                  </span>
+                  
+                  <span class="link-block">
+                    <a href="https://huggingface.co/InternRobotics/InternVLA-N1"
+                       class="external-link button is-normal is-rounded is-dark">
+                       <span class="icon">
+                        <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;">
+                      </span>
+                      <span>Model</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/InternRobotics/InternData-N1"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                          <i class="fas fa-database"></i>
+                      </span>
+                      <span>Dataset</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/InternRobotics/InternNav" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="./static/videos/supplimentary_demo_compressed.mp4" 
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce InternVLA-N1, the first open dual-system vision-language navigation founcation model. 
+            Our InternVLA-N1 demonstrates precise multi-modal grounding, long-horizon planning (>150m), real-time decision making (>30Hz) and cross-embodiment (wheeled, quadruped, humanoid) generalization abilities in unseen environments. 
+            To enable scalable training, we develop an efficient navigation data generation pipeline and introduce InternData-N1, the largest navigation dataset to date. 
+            InternData-N1 comprises over 50 million egocentric images collected from more than 3,000 scenes, amounting to 4,839 kilometers of robot navigation experience. 
+            We evaluate InternVLA-N1 across six challenging navigation benchmarks, where it consistently achieves state-of-the-art performance, with improvements ranging from 3% to 28%. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<!-- End image carousel -->
+
+<!-- Framework. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-11">
+        <h2 class="title is-3">Approach</h2>
+        <img src="./static/images/s1s2_overview.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-11">
+        <div class="content has-text-justified">
+          <p>
+            InternVLA-N1 adopts a compositional architecture featuring a dual-system design that synergistically combines high-level instruction interpretation with low-level action execution. Specifically, our system integrates:
+          </p>
+          <ul>
+            <li><strong>System 2:</strong> A vision-language model (VLM)-based planning module that interprets navigation instructions to predict mid-term waypoint goals through image-grounded reasoning. By predicting pixel coordinates in the image space, it effectively connects instruction understanding with spatial reasoning, enabling long-horizon navigation instruction following.</li>
+            <li><strong>System 1:</strong> A multi-modal goal-conditioned diffusion policy guided by latent plan or supported explicit goals, which generates executable short-horizon trajectories conditioned on current observations and the asynchronous latent features from System 2. It enables robust, real-time control and local decision-making in complex environments.</li>
+          </ul>
+          <p>
+            To fully unlock open-world generalization and asynchronous inference capabilities in the dual-system architecture, we design a curriculum training scheme. Initially, each system is trained separately to acquire basic navigation skills using explicit goals in a synchronized setting. Then, a joint fine-tuning phase is introduced. In this phase, we incorporate learnable tokens into System 2 as implicit midterm goals to reduce the ambiguity of pixel-based targets. 
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-11">
+        <img src="./static/images/internvla_model.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+ 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-11">
+        <h2 class="title is-3">InternData-N1 Dataset</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            For the navigation task, most real-world datasets are constrained by scene diversity and scale. Meanwhile, Internet video datasets suffer from imprecise localization and mapping information, which limits their feasibility as reliable navigation datasets for trajectory prediction. In contrast, we propose efficient pipelines for generating navigation datasets in simulation, aiming to facilitate scalable training.
+          </p>
+        </div>
+        <img src="./static/images/interndata_overview.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+      </div>
+    </div>
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-11">
+        <img src="./static/images/interndata_pipeline.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Video carousel -->
+<section class="hero is-small is light">
+  <div class="hero-body">
+    <div class="container is-centered has-text-centered">
+      <hr>
+
+      <h1 class="title is-3">Realworld evaluation</h1>
+      <h2 class="title is-3">Zero-shot transfer to real-world</h2>
+
+      <div class="columns is-centered is-vcentered">
+        <div class="column">
+          <div class="content">
+            <video poster="" id="video1" autoplay controls muted loop>
+              <source src="static/videos/v1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video poster="" id="video2" autoplay controls muted loop>
+              <source src="static/videos/v2.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <h2 class="title is-3">Baseline comparison</h2>
+
+      <div class="columns is-centered is-vcentered">
+        <div class="column">
+          <div class="content">
+            <video poster="" autoplay controls muted loop>
+              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered is-size-5">NAVILA</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video poster="" autoplay controls muted loop>
+              <source src="static/videos/baseline_internrobotics.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered is-size-5">InternVLA-N1</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+            <video poster="" autoplay controls muted loop>
+              <source src="static/videos/baseline_streamvln.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered is-size-5">StreamVLN</p>
+          </div>
+        </div>
+      </div>
+      <img src="./static/images/realworld_metrics.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+     </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-centered has-text-centered">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h1 class="title is-3">Evaluation in Simulation</h1>
+          <h2 class="title is-3">Quantitative results</h2>
+      <div class="content has-text-justified">
+        <p>
+          Our RGB-only variant outperforms all previous RGB-based methods on the R2R Val-Unseen benchmark. It achieves a Success Rate (SR) of 55.4% and an SPL of 52.1%, surpassing previous state-of-the-art models like NAVILA and MapNav.
+        </p>
+      </div>
+
+      <img src="./static/images/main_result.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+      <hr>
+      <div class="content has-text-justified">
+        <p>
+          Our System 1 model showcases several distinctive capabilities, outperforming baseline methods significantly. It achieves 2.7x better performance in no-goal exploration tasks, a 10.9% higher success rate in complex indoor path-planning, and 27.1% better performance in image-driven exploration by adaptively balancing exploration and exploitation.
+        </p>
+      </div>
+      
+      <img src="./static/images/s1_result1.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+
+      <img src="./static/images/s1_result2.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+
+      <img src="./static/images/s1_result3.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+      <h2 class="title is-3">VLN-CE evaluation</h2>
+      
+
+      <div id="results-carousel" class="carousel results-carousel is-centered has-text-centered is-max-desktop content">
+        
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop width="75%">
+            <!-- Your video file here -->
+            <source src="static/videos/sim4.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop width="75%">
+            <!-- Your video file here -->
+            <source src="static/videos/sim5.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop width="75%">\
+            <!-- Your video file here -->
+            <source src="static/videos/sim6.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video4">
+          <video poster="" id="video4" autoplay controls muted loop width="75%">\
+            <!-- Your video file here -->
+            <source src="static/videos/sim7.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End video carousel -->
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{cai2025navdp,
+  title = {InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans},
+  author = {InternRobotics Team},
+  booktitle = {Arxiv},
+  year = {2025},
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

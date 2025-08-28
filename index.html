@@ -261,7 +261,7 @@ All code, models, and datasets are publicly available.
       <hr>
 
       <h1 class="title is-3">Realworld evaluation</h1>
-      <h2 class="title is-3">Zero-shot transfer to real-world</h2>
+      <h2 class="title is-3">Zero-shot transfer to long-horizon navigation</h2>
 
       <div class="columns is-centered is-vcentered">
         <div class="column">
@@ -279,6 +279,72 @@ All code, models, and datasets are publicly available.
           </div>
         </div>
       </div>
+      <h2 class="title is-3">Clutter Environment Collision Avoidance</h2>
+
+      <div class="columns is-centered is-vcentered">
+        <div class="column">
+          <div class="video-container">
+            <video poster="" id="video1" autoplay controls muted loop>
+              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered instruction-text">Instruction: Enter the office area. Immediately turn left and continue straight. Then make a right turn. Stop at the workstation near the whiteboard.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="video-container">
+            <video poster="" id="video2" autoplay controls muted loop>
+              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered instruction-text">Instruction: Navigate through the lounge, turn right at the corner, and proceed down the hallway. Stop in front of the blue cabinet.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+
+      <h2 class="title is-3">Semantics Understanding</h2>
+
+      <div class="columns is-centered is-vcentered">
+        <div class="column">
+          <div class="video-container">
+            <video poster="" id="video1" autoplay controls muted loop>
+              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered instruction-text">Instruction: Enter the office area. Immediately turn left and continue straight. Then make a right turn. Stop at the workstation near the whiteboard.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="video-container">
+            <video poster="" id="video2" autoplay controls muted loop>
+              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered instruction-text">Instruction: Navigate through the lounge, turn right at the corner, and proceed down the hallway. Stop in front of the blue cabinet.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="title is-3"></h2>
+
+      <div class="columns is-centered is-vcentered">
+        <div class="column">
+          <div class="video-container">
+            <video poster="" id="video1" autoplay controls muted loop>
+              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered instruction-text">Instruction: Enter the office area. Immediately turn left and continue straight. Then make a right turn. Stop at the workstation near the whiteboard.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="video-container">
+            <video poster="" id="video2" autoplay controls muted loop>
+              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered instruction-text">Instruction: Navigate through the lounge, turn right at the corner, and proceed down the hallway. Stop in front of the blue cabinet.</p>
+          </div>
+        </div>
+      </div>
+      <hr>
       <h2 class="title is-3">Baseline comparison</h2>
 
       <div class="columns is-centered is-vcentered">
@@ -307,9 +373,12 @@ All code, models, and datasets are publicly available.
           </div>
         </div>
       </div>
+
+
       <img src="./static/images/realworld_metrics.png"
       class="interpolation-image"
       alt="Interpolate start reference image."/>
+
      </div>
   </div>
 </section>
@@ -384,7 +453,51 @@ All code, models, and datasets are publicly available.
         </div>
       </div>
 
-  
+      <h2 class="title is-3">Dual-System VLN-PE evaluation</h2>
+      <div id="results-carousel" class="carousel results-carousel is-centered has-text-centered is-max-desktop content">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop width="75%">
+            <!-- Your video file here -->
+            <source src="static/videos/VLNPE1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop width="75%">
+            <!-- Your video file here -->
+            <source src="static/videos/VLNPE2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop width="75%">\
+            <!-- Your video file here -->
+            <source src="static/videos/VLNPE3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video4">
+          <video poster="" id="video4" autoplay controls muted loop width="75%">\
+            <!-- Your video file here -->
+            <source src="static/videos/VLNPE4.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video5">
+          <video poster="" id="video5" autoplay controls muted loop width="75%">\
+            <!-- Your video file here -->
+            <source src="static/videos/VLNPE5.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video6">
+          <video poster="" id="video6" autoplay controls muted loop width="75%">
+            <!-- Your video file here -->
+            <source src="static/videos/VLNPE6.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
       
       <div id="results-carousel" class="carousel results-carousel is-centered has-text-centered is-max-desktop content">
         <div class="item item-video5">

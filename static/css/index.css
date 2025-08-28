@@ -140,4 +140,16 @@ video::-webkit-media-controls-mute-button {
   display: none;
 }
 
+.instruction-text {
+    color: #363636; /* A slightly darker gray for emphasis */
+    margin-top: 0.5em;
+    font-style: italic;
+}
 
+.video-container {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+    padding: 1rem;
+}

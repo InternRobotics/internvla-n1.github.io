@@ -25,7 +25,7 @@
 
 
   <title>InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
+  <link rel="icon" type="image/x-icon" href="static/images/internrobotic_logo.webp">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -55,7 +55,7 @@
             <h1 class="title is-1 publication-title"> InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans </h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block"><a href="https://github.com/InternRobotics">InternRobotics Team</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://github.com/InternRobotics">Intern Robotics</a><sup>1</sup></span>
             </div>
 
             <div class="is-size-5 publication-authors">
@@ -78,7 +78,7 @@
                   
                   <!-- Video Link. -->
                   <span class="link-block">
-                    <a href="https://youtu.be/vfUnxD9WfoA"
+                    <a href="https://youtu.be/MYZIYvo_8qw"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                           <i class="fab fa-youtube"></i>
@@ -152,11 +152,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce InternVLA-N1, the first open dual-system vision-language navigation founcation model. 
-            Our InternVLA-N1 demonstrates precise multi-modal grounding, long-horizon planning (>150m), real-time decision making (>30Hz) and cross-embodiment (wheeled, quadruped, humanoid) generalization abilities in unseen environments. 
-            To enable scalable training, we develop an efficient navigation data generation pipeline and introduce InternData-N1, the largest navigation dataset to date. 
-            InternData-N1 comprises over 50 million egocentric images collected from more than 3,000 scenes, amounting to 4,839 kilometers of robot navigation experience. 
-            We evaluate InternVLA-N1 across six challenging navigation benchmarks, where it consistently achieves state-of-the-art performance, with improvements ranging from 3% to 28%. 
+            We introduce InternVLA-N1, the first open dual-system vision-language navigation foundation model.
+Unlike previous navigation foundation models that can only take short-term actions from a limited discrete space, InternVLA-N1 decouples the task as pixel-goal planning with System 2 and agile execution with System 1.
+A curriculum two-stage training paradigm is devised for this framework: First, two systems are pretrained with explicit pixel goals as supervision or condition. Subsequently, we freeze System 2 and finetune the newly added latent plans with System 1 in an asynchronous end-to-end manner. Such a paradigm relying on latent plans as the intermediate representation removes the ambiguity of pixel goal planning and provides new potentials for pretraining extensions with video prediction.
+To enable scalable training, we develop an efficient navigation data generation pipeline and introduce InternData-N1, the largest navigation dataset to date. InternData-N1 comprises over 50 million egocentric images collected from more than 3,000 scenes, amounting to 4,839 kilometers of robot navigation experience. 
+We evaluate InternVLA-N1 across 6 challenging navigation benchmarks, where it consistently achieves state-of-the-art performance, with improvements ranging from 3% to 28%.
+In particular, it demonstrates synergistic integration of long-horizon planning (>150m) and real-time decision-making (>30Hz) capabilities and can be zero-shot generalized across diverse embodiments (wheeled, quadruped, humanoid) and in-the-wild environments.
+All code, models, and datasets are publicly available.
           </p>
         </div>
       </div>
@@ -220,7 +222,21 @@
             For the navigation task, most real-world datasets are constrained by scene diversity and scale. Meanwhile, Internet video datasets suffer from imprecise localization and mapping information, which limits their feasibility as reliable navigation datasets for trajectory prediction. In contrast, we propose efficient pipelines for generating navigation datasets in simulation, aiming to facilitate scalable training.
           </p>
         </div>
-        <img src="./static/images/interndata_overview.png"
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-11">
+        <img src="./static/images/interndata_table.png"
+        class="interpolation-image"
+        alt="Interpolate start reference image."/>
+      </div>
+    </div>
+    
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-11">
+        <img src="./static/images/interndata_overview.jpg"
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
       </div>
@@ -333,11 +349,11 @@
       <img src="./static/images/s1_result3.png"
       class="interpolation-image"
       alt="Interpolate start reference image."/>
-      <h2 class="title is-3">VLN-CE evaluation</h2>
-      
+    </div>
+  </div>
 
+    <h2 class="title is-3">Dual-System VLN-CE evaluation</h2>
       <div id="results-carousel" class="carousel results-carousel is-centered has-text-centered is-max-desktop content">
-        
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop width="75%">
             <!-- Your video file here -->
@@ -366,10 +382,72 @@
             type="video/mp4">
           </video>
         </div>
+      </div>
+
+  
+      
+      <div id="results-carousel" class="carousel results-carousel is-centered has-text-centered is-max-desktop content">
+        <div class="item item-video5">
+          <h2 class="title is-3">System 1 evaluation (PointGoal) </h2>
+          <video poster="" id="s1_video1" autoplay controls muted loop width="75%">
+            <!-- Your video file here -->
+            <source src="static/videos/system1_pointgoal1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        
+        <div class="item item-video6">
+          <h2 class="title is-3">System 1 evaluation (PointGoal) </h2>
+          <video poster="" id="s1_video2" autoplay controls muted loop width="75%">
+            
+            <!-- Your video file here -->
+            <source src="static/videos/system1_pointgoal2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        
+        <div class="item item-video7">
+          <h2 class="title is-3">System 1 evaluation (NoGoal) </h2>
+          <video poster="" id="s1_video3" autoplay controls muted loop width="75%">
+            <!-- Your video file here -->
+            <source src="static/videos/system1_nogoal_1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        
+        <div class="item item-video8">
+          <h2 class="title is-3">System 1 evaluation (NoGoal) </h2>
+          <video poster="" id="s1_video4" autoplay controls muted loop width="75%">
+            <!-- Your video file here -->
+            <source src="static/videos/system1_nogoal_2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        
+        <div class="item item-video1">
+          <h2 class="title is-3">System 1 evaluation (ImageGoal) </h2>
+          <video poster="" id="video1" autoplay controls muted loop width="75%">
+            <!-- Your video file here -->
+            <source src="static/videos/system1_imagegoal1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        
+        <div class="item item-video1">
+          <h2 class="title is-3">System 1 evaluation (ImageGoal) </h2>
+          <video poster="" id="video1" autoplay controls muted loop width="75%">
+            <!-- Your video file here -->
+            <source src="static/videos/system1_imagegoal2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
 
       </div>
-    </div>
-  </div>
 </section>
 
 <!-- End video carousel -->
@@ -395,7 +473,7 @@
       <h2 class="title">BibTeX</h2>
       <pre><code>@article{cai2025navdp,
   title = {InternVLA-N1: An Open Dual-System Vision-Language Navigation Foundation Model with Learned Latent Plans},
-  author = {InternRobotics Team},
+  author = {Intern Robotics},
   booktitle = {Arxiv},
   year = {2025},
 }</code></pre>
